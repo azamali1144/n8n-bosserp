@@ -8,6 +8,9 @@ headers = {
 "SOAPAction": "A_WebService#ws_wes_kunde_save"
 }
 
+print('endpoint: ', endpoint)
+print('auth: ', auth)
+
 kunde_xml = """<?xml version="1.0" encoding="UTF-8"?>
 <SOAP-ENV:Envelope
 xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"
@@ -37,6 +40,8 @@ tns:ws_wes_kunde_save
 </tns:ws_wes_kunde_save>
 </SOAP-ENV:Body>
 </SOAP-ENV:Envelope>"""
+
+print('kunde_xml: ', kunde_xml)
 
 r = requests.post(endpoint, data=kunde_xml, headers=headers, auth=auth, timeout=30)
 print(r.status_code)
