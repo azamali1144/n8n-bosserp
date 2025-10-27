@@ -43,7 +43,7 @@ tns:ws_wes_kunde_save
 
 print('kunde_xml: ', kunde_xml)
 
-r = requests.post(endpoint, data=kunde_xml, headers=headers, auth=auth, timeout=30)
+r = requests.post(endpoint, data=kunde_xml, headers=headers, auth=auth, timeout=30, verify=False)
 print(r.status_code)
 print(r.text)
 
